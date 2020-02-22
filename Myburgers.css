@@ -1,0 +1,28 @@
+.container-fluid {
+	background-color: #585858;
+}
+
+#logotopimage {
+	width: 40%;
+}
+
+a:link {
+	color: #33DDFF;
+	font-weight: bold;
+	font-family: 'Acme', ;
+	font-size: 16pt;
+	justify-content: space-around;
+}
+#sidenav {
+	background-color: #585858;
+	color: white;
+	float: left; 
+	margin: 0.5em;
+	margin-top: 2.5em;
+
+	border: solid #01FD0B 2pt;
+}
+.card-header {
+	font-weight: bold;
+	font-family: 'Acme', ;
+}
