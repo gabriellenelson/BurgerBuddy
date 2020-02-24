@@ -3,13 +3,14 @@
 <head>
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="Home.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Acme|Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 <body>
 
 	<div class="container-fluid">
-		<header><img id="logotopimage" src="BurgerBuddy Logo.png"><br>
+		<header><img id="logotopimage" src="BurgerBuddy Logo.png" style="width: 30%;"><br>
 
 		</header>
 
@@ -26,21 +27,140 @@
 			    <button class="btn btn-secondary" type="submit">Search</button>
 	    	</form>
 	    </div>
-	    <div id="postscontainer" class="card text-white bg-dark max w-75">
-	    <div class="card-header">Recent Burgertivity</div>
-		  	<div class="card-body">
-		    <h4 class="card-title">Red Robin's</h4>
-		    <p class="card-text">
-		    	<img id="profilephoto" src="profilephoto_goodcrop.webp">
+
+	    <div id="postscontainer" class="card text-white bg-dark max w-50">
+	    <div class="card-header" style="color: #01FD0B;">Recent Burgertivity</div>
+		  	<div id="postbody" class="card-body">
+		    <h4 id="restauranttitle" class="card-title">Red Robin's</h4>
+		    <p class="card-text" style="font-family:'Libre Baskerville', ;}">
+		    	<img id="profilephoto" src="missing-profile-photo.png">
 		    	Poster's name: John Doe<br>
-		    	Burger name: The Western Burger<br>
+		    	Burger name: <b>The Western Burger</b><br>
 		    	<p id="rating">Rating: 5/5</p><br>
 		    	<p id="comments">Comments: This burger was amazing!</p>
 		    </p>
 	  		</div>
+	  		<div id="postbody" class="card-body">
+		    <h4 id="restauranttitle" class="card-title">Univesrity Roadhouse</h4>
+		    <p class="card-text">
+		    	<img id="profilephoto" src="missing-profile-photo.png">
+		    	Poster's name: John Doe<br>
+		    	Burger name: <b> The Mediterranean</b><br>
+		    	<p id="rating">Rating: 4/5</p><br>
+		    	<p id="comments">Comments: Who would have thought cream cheese and tzatziki sauce on a burger was going to be delicious?</p>
+		    </p>
+	  		</div>
+	  		<div id="postbody" class="card-body">
+		    <h4 id="restauranttitle" class="card-title">Main St. Pub</h4>
+		    <p class="card-text">
+		    	<img id="profilephoto" src="missing-profile-photo.png">
+		    	Poster's name: John Doe<br>
+		    	Burger name: <b> Frisco Melt</b><br>
+		    	<p id="rating">Rating: 5/5</p><br>
+		    	<p id="comments">Comments: Yum!</p>
+		    </p>
+	  		</div>
+	  		<div id="postbody" class="card-body">
+		    <h4 id="restauranttitle" class="card-title">The Hangar</h4>
+		    <p class="card-text">
+		    	<img id="profilephoto" src="missing-profile-photo.png">
+		    	Poster's name: Edna Mode<br>
+		    	Burger name:<b> The Western Burger</b><br>
+		    	<p id="rating">Rating: 5/5</p><br>
+		    	<p id="comments">Comments: This burger was amazing!</p>
+		    </p>
+	  		</div>
+	  		<div id="postbody" class="card-body">
+		    <h4 id="restauranttitle" class="card-title">Latitude 42</h4>
+		    <p class="card-text">
+		    	<img id="profilephoto" src="missing-profile-photo.png">
+		    	Poster's name: Jill Noting<br>
+		    	Burger name:<b> Greektown</b><br>
+		    	<p id="rating">Rating: 3/5</p><br>
+		    	<p id="comments">Comments: Who doesn't love goat feta and hummus on a burger?</p>
+		    </p>
+	  		</div>
+	  		<div id="postbody" class="card-body">
+		    <h4 id="restauranttitle" class="card-title">Latitude 42</h4>
+		    <p class="card-text">
+		    	<img id="profilephoto" src="missing-profile-photo.png">
+		    	Poster's name: Gold Fish<br>
+		    	Burger name:<b> Mustang</b><br>
+		    	<p id="rating">Rating: 5/5</p><br>
+		    	<p id="comments">Comments: The aboslute classic burger with BBQ sauce, haystack onions, and bacon.</p>
+		    </p>
+	  		</div>
 		</div>
 
+
 	</div>
+	<footer>
+		<div id="footer" class="container-fluid text-center text-md-left">
+
+	    
+	   		 <div class="row">
+
+		      <!-- Grid column -->
+		      <div class="col-md-6 mt-md-0 mt-3">
+
+		       
+		        <h5 class="text-uppercase"><img id="footerimg" src="BurgerBuddy Logo.png" style="width: 15%;"> </h5>
+		        <p>Thank you for visitng our page!</p>
+
+		      </div>
+		      <!-- Grid column -->
+
+		      <hr class="clearfix w-100 d-md-none pb-3">
+
+		      <!-- Grid column -->
+		      <div class="col-md-3 mb-md-0 mb-3">
+
+		        <!-- Links -->
+		        <h7  class="text-uppercase">Links</h7>
+
+		        <ul class="list-unstyled">
+		          <li>
+		            <a id="footerlink" href="Home.html">Home</a>
+		          </li>
+		          <li>
+		            <a id="footerlink" href="Myburgers.html">My Burgers</a>
+		          </li>
+		          <li>
+		            <a id="footerlink" href="Profile.html">Profile</a>
+		          </li>
+		          
+		        </ul>
+
+		      </div>
+		      <div class="col-md-3 mb-md-0 mb-3">
+
+		        <!-- Links -->
+		        <h7  class="text-uppercase">Links</h7>
+
+		        <ul class="list-unstyled">
+		        	<li>
+		            <a id="footerlink" href="Settings.html">Settings</a>
+		          </li>
+		          <li>
+		            <a id="footerlink" href="#!">Contact Us</a>
+		          </li>
+		          
+		        </ul>
+
+		      </div>
+		      
+
+	    </div>
+	    <div id="copyright" class="footer-copyright text-center py-3">
+				&copy; 2020 Copyright: burgerbuddy.online
+			</div>
+	    
+
+	  </div>
+	  
+
+			
+	</footer>
 
 </body>
 </html>

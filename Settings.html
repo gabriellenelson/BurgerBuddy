@@ -4,13 +4,14 @@
 	<title>Settings</title>
 
 	<link rel="stylesheet" type="text/css" href="Settings.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
 </head>
 <body>
 
 	<div class="container-fluid">
-		<header><img id="logotopimage" src="BurgerBuddy Logo.png"><br>
+		<header><img id="logotopimage" src="BurgerBuddy Logo.png" style="width: 30%;"><br><br>
 
 		</header>
 
@@ -23,9 +24,9 @@
 		<div id="settingscontainer" class="card text-white bg-dark max w-75">
 	    <div class="card-header">Settings</div>
 		  	<div class="card-body">
-		    <h4 class="card-title">Privacy</h4>
+		    <h4 class="card-title" style="color: #01FD0B;">Privacy</h4>
 		    <p class="card-text">
-		    	<b> Location Servies Enabled:</b> 
+		    	<b style="color: #33DDFF;"> Location Servies Enabled:</b> 
 		    	<div class="form-group">
 			    	<select class="custom-select max w-50">
 			     	 <option selected="">Please Select One</option>
@@ -36,9 +37,9 @@
 			 </p>
 			</div>
 			<div class="card-body">
-		 		    <p class="card-text">
-		    	<b> Privacy Level:</b><br>
-		    	<i>This will be who can see your profile.</i>
+		 		    <p class="card-text" >
+		    	<b style="color: #01FD0B;"> Privacy Level:</b><br>
+		    	<i style="color: #33DDFF;">This will be who can see your profile.</i>
 		    	<div class="form-group">
 			    	<select class="custom-select max w-50">
 			     	 <option selected="">Please Select One</option>
@@ -52,8 +53,8 @@
 			</div>
 			<div class="card-body">
 		 	<p class="card-text">
-		    	<b> Delete Profile:</b><br>
-		    	<i>Would you like to permanantly delete your profile?</i><br>
+		    	<b style="color: #01FD0B;"> Delete Profile:</b><br>
+		    	<i style="color: #33DDFF;">Would you like to permanantly delete your profile?</i><br>
 		    	<button type="button" class="btn btn-danger">Delete</button>
 		    	
 			</p>
@@ -66,6 +67,73 @@
 		    
 	  		
 		</div>
+		<footer>
+		<div id="footer" class="container-fluid text-center text-md-left">
+
+	    
+	   		 <div class="row">
+
+		      <!-- Grid column -->
+		      <div class="col-md-6 mt-md-0 mt-3">
+
+		       
+		        <h5 class="text-uppercase"><img id="footerimg" src="BurgerBuddy Logo.png" style="width: 15%;"> </h5>
+		        <p>Thank you for visitng our page!</p>
+
+		      </div>
+		      <!-- Grid column -->
+
+		      <hr class="clearfix w-100 d-md-none pb-3">
+
+		      <!-- Grid column -->
+		      <div class="col-md-3 mb-md-0 mb-3">
+
+		        <!-- Links -->
+		        <h7  class="text-uppercase">Links</h7>
+
+		        <ul class="list-unstyled">
+		          <li>
+		            <a id="footerlink" href="Home.html">Home</a>
+		          </li>
+		          <li>
+		            <a id="footerlink" href="Myburgers.html">My Burgers</a>
+		          </li>
+		          <li>
+		            <a id="footerlink" href="Profile.html">Profile</a>
+		          </li>
+		          
+		        </ul>
+
+		      </div>
+		      <div class="col-md-3 mb-md-0 mb-3">
+
+		        <!-- Links -->
+		        <h7  class="text-uppercase">Links</h7>
+
+		        <ul class="list-unstyled">
+		        	<li>
+		            <a id="footerlink" href="Settings.html">Settings</a>
+		          </li>
+		          <li>
+		            <a id="footerlink" href="#!">Contact Us</a>
+		          </li>
+		          
+		        </ul>
+
+		      </div>
+		      
+
+	    </div>
+	    <div id="copyright" class="footer-copyright text-center py-3">
+				&copy; 2020 Copyright: burgerbuddy.online
+			</div>
+	    
+
+	  </div>
+	  
+
+			
+	</footer>
 
 		
 
