@@ -65,7 +65,7 @@ a:link {
 #footer{
 	background-color: #585858;
 	border-top: solid black 1pt;
-	position: relative;
+	position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;  

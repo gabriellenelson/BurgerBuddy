@@ -6,11 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Acme|Libre+Baskerville&display=swap" rel="stylesheet">
+	<!--<script type="text/javascript" language="javascript" src="Home.js"></script> -->
+	
 </head>
 <body>
 
 	<div class="container-fluid">
-		<header><img id="logotopimage" src="BurgerBuddy Logo.png" style="width: 30%;"><br>
+		<header><img id="logotopimage" src="images/BurgerBuddy Logo.png" style="width: 30%;"><br>
 
 		</header>
 
@@ -29,67 +31,66 @@
 	    </div>
 
 	    <div id="postscontainer" class="card text-white bg-dark max w-50">
-	    <div class="card-header" style="color: #01FD0B;">Recent Burgertivity</div>
-		  	<div id="postbody" class="card-body">
-		    <h4 id="restauranttitle" class="card-title">Red Robin's</h4>
-		    <p class="card-text" style="font-family:'Libre Baskerville', ;}">
-		    	<img id="profilephoto" src="missing-profile-photo.png">
-		    	Poster's name: John Doe<br>
-		    	Burger name: <b>The Western Burger</b><br>
-		    	<p id="rating">Rating: 5/5</p><br>
-		    	<p id="comments">Comments: This burger was amazing!</p>
-		    </p>
-	  		</div>
-	  		<div id="postbody" class="card-body">
-		    <h4 id="restauranttitle" class="card-title">Univesrity Roadhouse</h4>
-		    <p class="card-text">
-		    	<img id="profilephoto" src="missing-profile-photo.png">
-		    	Poster's name: John Doe<br>
-		    	Burger name: <b> The Mediterranean</b><br>
-		    	<p id="rating">Rating: 4/5</p><br>
-		    	<p id="comments">Comments: Who would have thought cream cheese and tzatziki sauce on a burger was going to be delicious?</p>
-		    </p>
-	  		</div>
-	  		<div id="postbody" class="card-body">
-		    <h4 id="restauranttitle" class="card-title">Main St. Pub</h4>
-		    <p class="card-text">
-		    	<img id="profilephoto" src="missing-profile-photo.png">
-		    	Poster's name: John Doe<br>
-		    	Burger name: <b> Frisco Melt</b><br>
-		    	<p id="rating">Rating: 5/5</p><br>
-		    	<p id="comments">Comments: Yum!</p>
-		    </p>
-	  		</div>
-	  		<div id="postbody" class="card-body">
-		    <h4 id="restauranttitle" class="card-title">The Hangar</h4>
-		    <p class="card-text">
-		    	<img id="profilephoto" src="missing-profile-photo.png">
-		    	Poster's name: Edna Mode<br>
-		    	Burger name:<b> The Western Burger</b><br>
-		    	<p id="rating">Rating: 5/5</p><br>
-		    	<p id="comments">Comments: This burger was amazing!</p>
-		    </p>
-	  		</div>
-	  		<div id="postbody" class="card-body">
-		    <h4 id="restauranttitle" class="card-title">Latitude 42</h4>
-		    <p class="card-text">
-		    	<img id="profilephoto" src="missing-profile-photo.png">
-		    	Poster's name: Jill Noting<br>
-		    	Burger name:<b> Greektown</b><br>
-		    	<p id="rating">Rating: 3/5</p><br>
-		    	<p id="comments">Comments: Who doesn't love goat feta and hummus on a burger?</p>
-		    </p>
-	  		</div>
-	  		<div id="postbody" class="card-body">
-		    <h4 id="restauranttitle" class="card-title">Latitude 42</h4>
-		    <p class="card-text">
-		    	<img id="profilephoto" src="missing-profile-photo.png">
-		    	Poster's name: Gold Fish<br>
-		    	Burger name:<b> Mustang</b><br>
-		    	<p id="rating">Rating: 5/5</p><br>
-		    	<p id="comments">Comments: The aboslute classic burger with BBQ sauce, haystack onions, and bacon.</p>
-		    </p>
-	  		</div>
+	    <div class="card-header" style="color: #01FD0B;">Nearby</div>
+		  	<div id="googleMap" class="card-body" style="width: 100%; height: 600px;"></div>
+		  		<script type="text/javascript">
+		  			
+			        var map, infoWindow;
+			        function initMap() {
+					        map = new google.maps.Map(document.getElementById('googleMap'), {
+					          center: {lat: -34.397, lng: 150.644},
+					          zoom: 12
+					        });
+					        infoWindow = new google.maps.InfoWindow;
+
+					        // Try HTML5 geolocation.
+					        if (navigator.geolocation) {
+					          navigator.geolocation.getCurrentPosition(function(position) {
+					            var pos = {
+					              lat: position.coords.latitude,
+					              lng: position.coords.longitude
+					            };
+					            var marker = new google.maps.Marker({
+						      	position: pos,
+						      	animation: google.maps.Animation.BOUNCE
+						      });
+
+					         marker.setMap(map);
+
+					            infoWindow.setPosition(pos);
+					            infoWindow.setContent(marker);
+					            
+					            map.setCenter(pos);
+					          }, function() {
+					            handleLocationError(true, infoWindow, map.getCenter());
+					          });
+
+
+					        } else {
+					          // Browser doesn't support Geolocation
+					          handleLocationError(false, infoWindow, map.getCenter());
+					        }
+
+					         
+			      }
+
+			      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+				        infoWindow.setPosition(pos);
+				        infoWindow.setContent(browserHasGeolocation ?
+				                              'Error: The Geolocation service failed.' :
+				                              'Error: Your browser doesn\'t support geolocation.');
+				        infoWindow.open(map);
+			      }
+
+			     
+		  		</script>
+		  		
+		  		 <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFiazYlCdDhkPJHWBRdXcjJRkqqWE-UyI&callback=initMap"></script>
+		
+	  		
+	  		
+		    
 		</div>
 
 
@@ -104,7 +105,7 @@
 		      <div class="col-md-6 mt-md-0 mt-3">
 
 		       
-		        <h5 class="text-uppercase"><img id="footerimg" src="BurgerBuddy Logo.png" style="width: 15%;"> </h5>
+		        <h5 class="text-uppercase"><img id="footerimg" src="images/BurgerBuddy Logo.png" style="width: 15%;"> </h5>
 		        <p>Thank you for visitng our page!</p>
 
 		      </div>
@@ -134,8 +135,7 @@
 		      </div>
 		      <div class="col-md-3 mb-md-0 mb-3">
 
-		        <!-- Links -->
-		        <h7  class="text-uppercase">Links</h7>
+		        
 
 		        <ul class="list-unstyled">
 		        	<li>
@@ -161,6 +161,8 @@
 
 			
 	</footer>
+
+
 
 </body>
 </html>
