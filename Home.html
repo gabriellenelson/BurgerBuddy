@@ -26,9 +26,54 @@
 		<div id="searchbar" class="col-md-10">
 			<form id="searchbar" class="form-inline">
 			 	<input class="form-control w-50" type="text" placeholder="Search">
-			    <button class="btn btn-secondary" type="submit">Search</button>
+			    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addBurger">Search</button>
+			    <button  id="addburgerbtn" class="btn" data-toggle="modal" data-target="#addBurger" style="background-color: white; color: #33DDFF; height: 45px; margin-left: 2em; text-align: center; font-weight: normal; font-family: 'Acme';">Add Burger</button>
+			     <div class="modal" id="addBurger">
+			    	<div class="modal-dialog">
+			    		<div class="modal-content">
+
+			    			<div class="modal-header">
+			    				<h4 class="modal-title">Add New Delicious Burger</h4>	    				
+
+			    			</div>
+			    			<div class="modal-body">
+			    				<!-- Add Form here-->
+			    				<div class="form-group">
+								  <label class="control-label" for="focusedInput">Location Name</label>
+								  <input class="form-control" id="focusedInput" type="text" value="Enter name of establisment...">
+								</div> <br>
+								<div class="form-group">
+								  <label class="control-label" for="focusedInput">Burger Name</label>
+								  <input class="form-control" id="focusedInput" type="text" value="Enter name delicious burger...">
+								</div> <br>
+								<div class="form-group">
+								  <label class="control-label" for="focusedInput">Burger Rating</label>
+								  <input class="form-control" id="focusedInput" type="text" value="Enter rating...">/5
+								</div> <br>
+								<div class="form-group">
+								  <label class="control-label" for="inputLarge">Comments</label>
+								  <input class="form-control input-lg" type="text" id="inputLarge" value="Tell us about this burger...">
+								</div>
+
+
+
+			    			</div>
+
+			    			<div class="modal-footer">
+			    				<button type="button" class="btn btn-danger" data-dismiss="modal">Submit</button>
+			    				<!-- Eventually change this to submit form-->
+
+			    			</div>
+
+			    		</div>
+			    	</div>
+			    	
+
+	   			</div>
 	    	</form>
 	    </div>
+
+	   
 
 	    <div id="postscontainer" class="card text-white bg-dark max w-50">
 	    <div class="card-header" style="color: #01FD0B;">Nearby</div>
@@ -37,39 +82,49 @@
 		  			
 			        var map, infoWindow;
 			        function initMap() {
-					        map = new google.maps.Map(document.getElementById('googleMap'), {
-					          center: {lat: -34.397, lng: 150.644},
-					          zoom: 12
-					        });
-					        infoWindow = new google.maps.InfoWindow;
+					    map = new google.maps.Map(document.getElementById('googleMap'), {
+					        center: {lat: -34.397, lng: 150.644},
+					        zoom: 12
+					    });
 
-					        // Try HTML5 geolocation.
-					        if (navigator.geolocation) {
-					          navigator.geolocation.getCurrentPosition(function(position) {
-					            var pos = {
-					              lat: position.coords.latitude,
-					              lng: position.coords.longitude
+					    infoWindow = new google.maps.InfoWindow;
+
+					        
+					    if (navigator.geolocation) {
+					        navigator.geolocation.getCurrentPosition(function(position) 
+					        {
+					            var pos = 
+					            {
+						            lat: position.coords.latitude,
+						            lng: position.coords.longitude
 					            };
-					            var marker = new google.maps.Marker({
-						      	position: pos,
-						      	animation: google.maps.Animation.BOUNCE
-						      });
+					            var marker = new google.maps.Marker(
+					            {
+							      	position: pos,
+							      	animation: google.maps.Animation.DROP,
+							      	opacity: 0.7
+							      	
+						        });
 
-					         marker.setMap(map);
+						        marker.setMap(map);
 
-					            infoWindow.setPosition(pos);
-					            infoWindow.setContent(marker);
-					            
-					            map.setCenter(pos);
-					          }, function() {
-					            handleLocationError(true, infoWindow, map.getCenter());
-					          });
+						        infoWindow.setPosition(pos);
+						        infoWindow.setContent(marker);
+						        map.setCenter(pos);
+						    }, 
+						    function() 
+						    {
+						        handleLocationError(true, infoWindow, map.getCenter());
+						    });
 
 
 					        } else {
-					          // Browser doesn't support Geolocation
-					          handleLocationError(false, infoWindow, map.getCenter());
+					          
+					        	handleLocationError(false, infoWindow, map.getCenter());
 					        }
+
+					draggable: true;    
+
 
 					         
 			      }
@@ -85,8 +140,7 @@
 			     
 		  		</script>
 		  		
-		  		 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFiazYlCdDhkPJHWBRdXcjJRkqqWE-UyI&callback=initMap"></script>
+		  		 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFiazYlCdDhkPJHWBRdXcjJRkqqWE-UyI&callback=initMap"></script>
 		
 	  		
 	  		
